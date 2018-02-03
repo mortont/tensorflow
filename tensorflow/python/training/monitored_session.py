@@ -1173,7 +1173,7 @@ class _HookedSession(_WrappedSession):
       hook.after_run(
           run_context,
           session_run_hook.SessionRunValues(
-              results=outputs[hook] if hook in outputs else None,
+              results=outputs['caller'],
               options=options,
               run_metadata=run_metadata))
     self._should_stop = self._should_stop or run_context.stop_requested
